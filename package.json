@@ -6,6 +6,7 @@
     "start": "nuxt start"
   },
   "dependencies": {
+    "@nuxtjs/amp": "^0.5.4",
     "@nuxtjs/google-fonts": "^1.2.0",
     "fibers": "^5.0.0",
     "graphql": "^15.5.0",

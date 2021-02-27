@@ -76,10 +76,10 @@ section {
   .container {
     max-width: 1140px;
     .feather {
-        height: 0.8rem;
-        width: auto;
-        margin-bottom: 3px;
-        margin-left: 3px;
+      height: 0.8rem;
+      width: auto;
+      margin-bottom: 3px;
+      margin-left: 3px;
     }
   }
 }

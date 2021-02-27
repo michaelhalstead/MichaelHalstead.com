@@ -3,6 +3,8 @@
 </template>
 
 <script>
+import ogImage from '@/assets/img/og-default.jpg';
+const baseUrl = "https://michaelhalstead.com";
 // Test on: https://cards-dev.twitter.com/validator
 // Test on: https://developers.facebook.com/tools/debug/
 export default {
@@ -17,18 +19,19 @@ export default {
     },
     image: {
       type: String,
-      default: "~/assets/img/og-default.jpg",
+      default: baseUrl + ogImage,
     },
   },
 
   head() {
+    const title = this.title !== 'Home' ? this.title + " | Michael Halstead" : "Michael Halstead";
     return {
-      title: this.title,
+      title: title,
       meta: [
         {
           hid: "twitter:title",
           name: "twitter:title",
-          content: this.title,
+          content: title,
         },
         {
           hid: "twitter:description",
@@ -43,12 +46,12 @@ export default {
         {
           hid: "twitter:image:alt",
           name: "twitter:image:alt",
-          content: this.title,
+          content: title,
         },
         {
           hid: "og:title",
           property: "og:title",
-          content: this.title,
+          content: title,
         },
         {
           hid: "og:description",
@@ -68,7 +71,7 @@ export default {
         {
           hid: "og:image:alt",
           property: "og:image:alt",
-          content: this.title,
+          content: title,
         },
       ],
     };

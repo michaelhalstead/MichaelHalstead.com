@@ -1,5 +1,6 @@
 <template>
   <Fragment>
+    <SEO title="Blog" description="Recents posts, including: poetry, essays, etcetera." />
     <Navbar dark />
     <section class="bg-light pb-5">
       <section class="container">
@@ -185,6 +186,7 @@
 <script>
 import { gql } from "graphql-request";
 import { Fragment } from "vue-fragment";
+import SEO from "@/components/SEO.vue";
 import Header from "@/components/headers/Primary.vue";
 import Navbar from "@/components/global/Navbar.vue";
 
@@ -232,7 +234,7 @@ export default {
     },
   },
 
-  components: { Fragment, Header, Navbar },
+  components: { Fragment, Header, Navbar, SEO },
   beforeMount() {
     this.categories = {
       poetry: this.category("poetry"),

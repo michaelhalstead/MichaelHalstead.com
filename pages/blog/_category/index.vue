@@ -1,5 +1,6 @@
 <template>
   <Fragment>
+    <SEO :title="getCategory()" description="" />
     <Navbar dark />
     <section class="bg-light">
       <header class="container pt-5 pb-4">
@@ -71,6 +72,7 @@
 <script>
 import { gql } from "graphql-request";
 import { Fragment } from "vue-fragment";
+import SEO from "@/components/SEO.vue";
 import Header from "@/components/headers/Primary.vue";
 import Navbar from "@/components/global/Navbar.vue";
 
@@ -90,6 +92,12 @@ export default {
               slug
             }
             featuredImage {
+              url
+            }
+          }
+          category(where: { slug: "${category}" }) {
+            title
+            heroImage {
               url
             }
           }
@@ -118,11 +126,7 @@ export default {
     },
   },
 
-  components: { Fragment, Header, Navbar },
-
-  head() {
-    return { title: "Blog | Michael Halstead" };
-  },
+  components: { Fragment, SEO, Header, Navbar },
 };
 </script>
 

@@ -2,7 +2,8 @@ export default {
   plugins: ['~/plugins/graphcms.js'],
   css: ['@/assets/styles/scss/styles.scss'],
   env: {
-    graphcmsEndpoint: process.env.GRAPHCMS_ENDPOINT
+    graphcmsEndpoint: process.env.GRAPHCMS_ENDPOINT,
+    baseUrl: process.env.BASE_URL || 'localhost:3000'
   },
   router: {
     linkActiveClass: 'active'
@@ -18,8 +19,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     ],
     script: [
-      { hid: 'bootstrap', src: 'assets/js/bootstrap.min.js', defer: true },
-      { hid: 'bootstrap', src: 'https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js', defer: true }
+      { hid: 'bootstrap', src: 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js', defer: true }
     ]
   },
   build: {
@@ -28,6 +28,12 @@ export default {
   buildModules: [
     '@nuxtjs/google-fonts'
   ],
+  modules: [
+    '@nuxtjs/amp'
+  ],
+  amp: {
+    origin: process.env.ORIGIN_URL || 'http://localhost:3000'
+  },
   googleFonts: {
     families: {
       Roboto: [100, 300, 400, 500, 700, 900]

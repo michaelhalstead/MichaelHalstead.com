@@ -66,7 +66,7 @@ export default {
   width: 100%;
   padding-bottom: 56.75%;
   position: relative;
-  transition: 1s all ease;
+  transition: 1s all ease-out;
   &:hover {
     background-size: auto 105%;
   }
