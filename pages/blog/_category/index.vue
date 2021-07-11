@@ -18,22 +18,6 @@
         <div class="row gx-5">
           <div class="col-12">
             <div class="row">
-              <!-- <div v-for="post in posts" :key="post.slug" class="post-card mb-4">
-              <div class="post-card-head">
-                <img
-                  :src="post.featuredImage && post.featuredImage.url"
-                  class="w-100"
-                />
-              </div>
-              <h3 v-text="post.title" class="mt-3 mb-1" />
-              <small class="d-block">{{ formatDate(post.date) }}</small>
-              <p class="mb-0 mt-3" v-text="post.excerpt" v-if="post.excerpt" />
-              <NuxtLink
-                :to="{ name: 'blog-slug', params: { slug: post.slug } }"
-                class="btn btn-dark btn-sm mt-4"
-                >Read More</NuxtLink
-              >
-            </div> -->
               <NuxtLink
                 v-for="post in paginated(posts)"
                 :key="post.slug"

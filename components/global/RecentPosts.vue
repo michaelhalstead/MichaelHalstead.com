@@ -1,14 +1,13 @@
 <template>
   <section class="pb-1">
     <div class="container py-5">
-      <!-- <h1 class="text-center mb-5 font-weight-normal display-5">Recent Posts</h1> -->
       <div
         class="d-flex justify-content-between align-items-center mb-3 flex-wrap"
       >
         <h1 class="font-weight-normal text-center display-5">Recent Posts</h1>
         <p class="mb-0 small">
           <NuxtLink to="/blog" style="text-decoration: none" class="text-dark"
-            >See All 🠒
+            >See All →
           </NuxtLink>
         </p>
       </div>

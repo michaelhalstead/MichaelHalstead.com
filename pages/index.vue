@@ -5,7 +5,7 @@
     <Header />
     <About />
     <CurrentlyReading />
-    <!-- <RecentPosts :data="posts" /> -->
+    <RecentPosts :data="posts" />
   </div>
 </template>
 
