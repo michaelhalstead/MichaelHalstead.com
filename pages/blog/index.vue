@@ -149,7 +149,7 @@
               to="/blog/essays"
               style="text-decoration: none"
               class="text-dark"
-              >See All 🠒
+              >See All →
             </NuxtLink>
           </p>
         </div>

@@ -15,7 +15,7 @@
               <h1 class="display-4 font-weight-normal" v-text="post.title" />
             </header>
             <small v-text="formatDate(post.date)" />
-            <div class="mt-5" v-html="post.content.html" />
+            <div class="mt-5" v-html="content()" />
           </article>
         </div>
       </div>
@@ -67,6 +67,9 @@ export default {
 
       return new Intl.DateTimeFormat("default", options).format(new Date(date));
     },
+    content() {
+      return this.post.content.html.replace(/\[tab\]/gi, '<span class="tab"></span>')
+    }
   },
 };
 </script>
