@@ -1,5 +1,5 @@
 <template>
-  <Fragment>
+  <div>
     <SEO title="Blog" description="Recents posts, including: poetry, essays, etcetera." />
     <Navbar dark />
     <section class="bg-light pb-5">
@@ -109,7 +109,7 @@
               to="/blog/poetry"
               style="text-decoration: none"
               class="text-dark"
-              >See All 🠒
+              >See All →
             </NuxtLink>
           </p>
         </div>
@@ -180,12 +180,11 @@
         </div>
       </div>
     </section>
-  </Fragment>
+  </div>
 </template>
 
 <script>
 import { gql } from "graphql-request";
-import { Fragment } from "vue-fragment";
 import SEO from "@/components/SEO.vue";
 import Header from "@/components/headers/Primary.vue";
 import Navbar from "@/components/global/Navbar.vue";
@@ -234,7 +233,7 @@ export default {
     },
   },
 
-  components: { Fragment, Header, Navbar, SEO },
+  components: { Header, Navbar, SEO },
   beforeMount() {
     this.categories = {
       poetry: this.category("poetry"),

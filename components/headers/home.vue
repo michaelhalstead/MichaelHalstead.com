@@ -40,7 +40,7 @@ export default {
       let typedTextSpan = this.$refs.typedTextSpan;
 
       if (this.charIndex < this.textArray[this.textArrayIndex].length) {
-        if (!cursorSpan.classList.contains("typing"))
+        if (!cursorSpan?.classList.contains("typing"))
           cursorSpan.classList.add("typing");
         typedTextSpan.textContent += this.textArray[this.textArrayIndex].charAt(
           this.charIndex

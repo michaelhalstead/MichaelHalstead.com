@@ -1,17 +1,16 @@
 <template>
-  <fragment>
+  <div>
     <SEO title="Home" description="The website for Michael Halstead. Web Developer and sometimes blogger living in the great state of Washington." />
     <Navbar />
     <Header />
     <About />
     <CurrentlyReading />
-    <RecentPosts :data="posts" />
-  </fragment>
+    <!-- <RecentPosts :data="posts" /> -->
+  </div>
 </template>
 
 <script>
 import { gql } from "graphql-request";
-import { Fragment } from "vue-fragment";
 import SEO from "@/components/SEO.vue";
 import Navbar from "@/components/global/Navbar.vue";
 import Header from "@/components/headers/home.vue";
@@ -45,7 +44,6 @@ export default {
     Header,
     Navbar,
     RecentPosts,
-    Fragment,
     SEO,
     About,
     CurrentlyReading

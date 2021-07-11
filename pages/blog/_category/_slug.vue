@@ -1,5 +1,5 @@
 <template>
-  <Fragment v-if="post">
+  <div v-if="post">
     <SEO :title="post.title" :image="post.featuredImage.url" />
     <Navbar />
     <Header
@@ -20,12 +20,11 @@
         </div>
       </div>
     </section>
-  </Fragment>
+  </div>
 </template>
 
 <script>
 import { gql } from "graphql-request";
-import { Fragment } from "vue-fragment";
 import SEO from "@/components/SEO.vue";
 import Navbar from "@/components/global/Navbar.vue";
 import Header from "@/components/headers/Post.vue";
@@ -59,7 +58,6 @@ export default {
   components: {
     SEO,
     Header,
-    Fragment,
     Navbar,
   },
 

@@ -28,12 +28,6 @@ export default {
   buildModules: [
     '@nuxtjs/google-fonts'
   ],
-  modules: [
-    '@nuxtjs/amp'
-  ],
-  amp: {
-    origin: process.env.ORIGIN_URL || 'http://localhost:3000'
-  },
   googleFonts: {
     families: {
       Roboto: [100, 300, 400, 500, 700, 900]

@@ -15,7 +15,7 @@ export default {
     },
     description: {
       type: String,
-      required: true,
+      required: false,
     },
     image: {
       type: String,
@@ -36,7 +36,7 @@ export default {
         {
           hid: "twitter:description",
           name: "twitter:description",
-          content: this.description,
+          content: this.description || "A post on Michael Halstead's blog",
         },
         {
           hid: "twitter:image",

@@ -1,5 +1,5 @@
 <template>
-  <Fragment>
+  <div>
     <nav class="navbar navbar-expand-lg sticky-top navbar-dark" ref="nav">
       <div class="container">
         <NuxtLink class="navbar-brand" to="/">
@@ -67,11 +67,10 @@
         </div>
       </div>
     </div>
-  </Fragment>
+  </div>
 </template>
 
 <script>
-import { Fragment } from "vue-fragment";
 
 export default {
   data() {
@@ -84,9 +83,6 @@ export default {
     dark: {
       type: Boolean,
     },
-  },
-  components: {
-    Fragment,
   },
   methods: {
     handleScroll() {

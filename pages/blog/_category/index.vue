@@ -1,5 +1,5 @@
 <template>
-  <Fragment>
+  <div>
     <SEO :title="getCategory()" description="" />
     <Navbar dark />
     <section class="bg-light">
@@ -66,12 +66,11 @@
         </div>
       </div>
     </section>
-  </Fragment>
+  </div>
 </template>
 
 <script>
 import { gql } from "graphql-request";
-import { Fragment } from "vue-fragment";
 import SEO from "@/components/SEO.vue";
 import Header from "@/components/headers/Primary.vue";
 import Navbar from "@/components/global/Navbar.vue";
@@ -117,16 +116,16 @@ export default {
       return new Intl.DateTimeFormat("default", options).format(new Date(date));
     },
     paginated(posts) {
-      const base = this.page * 10 - 10;
+      const base = this.page * 21 - 21;
       console.log(posts);
-      return posts.slice(base, base + 10);
+      return posts.slice(base, base + 21);
     },
     getCategory() {
       return this.posts[0].category.title;
     },
   },
 
-  components: { Fragment, SEO, Header, Navbar },
+  components: { SEO, Header, Navbar },
 };
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <Fragment>
+  <div>
     <Navbar dark />
     <section class="bg-light pb-5">
       <section class="container">
@@ -21,12 +21,11 @@
         </vue-masonry-wall>
       </section>
     </section>
-  </Fragment>
+  </div>
 </template>
 
 <script>
 import { gql } from "graphql-request";
-import { Fragment } from "vue-fragment";
 import Header from "@/components/headers/Primary.vue";
 import Navbar from "@/components/global/Navbar.vue";
 import VueMasonryWall from "vue-masonry-wall";
@@ -62,7 +61,7 @@ export default {
     },
   },
 
-  components: { Fragment, Header, Navbar, VueMasonryWall },
+  components: { Header, Navbar, VueMasonryWall },
   beforeMount() {},
   head() {
     return { title: "Art | Michael Halstead" };
