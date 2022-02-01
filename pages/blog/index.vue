@@ -233,7 +233,7 @@ export default {
   },
 
   components: { Header, Navbar, SEO },
-  beforeMount() {
+  created() {
     this.$store.commit('global/makeNavDark');
 
     this.categories = {

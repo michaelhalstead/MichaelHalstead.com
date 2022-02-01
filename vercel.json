@@ -16,19 +16,19 @@
             }
         },
         {
-			"src": "^/blog/(.*)/(.*)",
+			"src": "^/blog/[A-Za-z0-9]{1,}/[A-Za-z0-9]{1,}",
 			"dest": "/blog/category/slug"
 		},
         {
-			"src": "^/blog/(.*)",
+			"src": "^/blog/([^(/|?)]){1,}($|/($|?)|?)",
 			"dest": "/blog/category"
 		},
         {
-			"src": "^/blog",
+			"src": "^/blog($|/($|?))",
 			"dest": "/blog"
 		},
         {
-			"src": "^/art",
+			"src": "^/art($|\/($|?)",
 			"dest": "/art"
 		},
         {
