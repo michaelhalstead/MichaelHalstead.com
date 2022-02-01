@@ -24,11 +24,19 @@
 			"dest": "/blog/category"
 		},
         {
-			"src": "^/blog($|/($|?))",
+			"src": "^/blog/",
 			"dest": "/blog"
 		},
         {
-			"src": "^/art($|\/($|?)",
+			"src": "^/blog",
+			"dest": "/blog"
+		},
+        {
+			"src": "^/art/",
+			"dest": "/art"
+		},
+        {
+			"src": "^/art",
 			"dest": "/art"
 		},
         {
