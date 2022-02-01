@@ -16,6 +16,22 @@
             }
         },
         {
+			"src": "^/blog/(.*)/(.*)",
+			"dest": "/blog/category/slug"
+		},
+        {
+			"src": "^/blog/(.*)",
+			"dest": "/blog/category"
+		},
+        {
+			"src": "^/blog",
+			"dest": "/blog"
+		},
+        {
+			"src": "^/art",
+			"dest": "/art"
+		},
+        {
             "src": "/(.*)",
             "dest": "/"
         }
