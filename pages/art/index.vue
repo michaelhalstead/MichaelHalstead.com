@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Navbar dark />
     <section class="bg-light pb-5">
       <section class="container">
         <h1 class="font-weight-normal display-4 pt-5 pb-3">Art</h1>
@@ -66,6 +65,9 @@ export default {
   head() {
     return { title: "Art | Michael Halstead" };
   },
+  beforeMount() {
+    this.$store.commit('global/makeNavDark');
+  }
 };
 </script>
 

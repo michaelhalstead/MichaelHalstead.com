@@ -1,7 +1,6 @@
 <template>
   <div>
     <SEO title="Blog" description="Recents posts, including: poetry, essays, etcetera." />
-    <Navbar dark />
     <section class="bg-light pb-5">
       <section class="container">
         <h1 class="font-weight-normal display-4 pt-5 pb-3">Recent Posts</h1>
@@ -194,7 +193,7 @@ export default {
     return await $graphcms.request(
       gql`
         {
-          posts {
+          posts(orderBy: date_DESC) {
             title
             slug
             date
@@ -230,11 +229,13 @@ export default {
     category(cat) {
       const items = this.posts.filter((post) => post.category.slug === cat);
       return { posts: items.slice(0, 4), length: items.length };
-    },
+    }
   },
 
   components: { Header, Navbar, SEO },
   beforeMount() {
+    this.$store.commit('global/makeNavDark');
+
     this.categories = {
       poetry: this.category("poetry"),
       essays: this.category("essays"),

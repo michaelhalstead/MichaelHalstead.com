@@ -1,5 +1,5 @@
 export default {
-  plugins: ['~/plugins/graphcms.js'],
+  plugins: ['~/plugins/graphcms.js', '~/plugins/disqus.js'],
   css: ['@/assets/styles/scss/styles.scss'],
   env: {
     graphcmsEndpoint: process.env.GRAPHCMS_ENDPOINT,

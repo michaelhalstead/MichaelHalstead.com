@@ -37,20 +37,6 @@
       <div class="row gx-md-5 gy-4">
         <div class="col-6 col-sm-6 col-md-3">
           <img
-            src="~/assets/img/absolutely-remarkable-thing.jpg"
-            alt="An Absolutely Remarkable Thing by Hank Green"
-            class="w-100"
-          />
-        </div>
-        <div class="col-6 col-sm-6 col-md-3">
-          <img
-            src="~/assets/img/ruthless-elimination.jpg"
-            alt="The Ruthless Elimination of Hurry by John Mark Comer"
-            class="w-100"
-          />
-        </div>
-        <div class="col-6 col-sm-6 col-md-3">
-          <img
             src="~/assets/img/chamber-of-secrets.jpg"
             alt="Harry Potter and the CHamber of Secrets by J.K. Rowling"
             class="w-100"
@@ -60,6 +46,20 @@
           <img
             src="https://images-na.ssl-images-amazon.com/images/I/81-349iYbfL.jpg"
             alt="Where The Crawdads Sing cover"
+            class="w-100"
+          />
+        </div>
+        <div class="col-6 col-sm-6 col-md-3">
+          <img
+            src="~/assets/img/modern-romance.jpg"
+            alt="Modern Romance"
+            class="w-100"
+          />
+        </div>
+        <div class="col-6 col-sm-6 col-md-3">
+          <img
+            src="~/assets/img/long-before-luther.jpg"
+            alt="Long Before Luther"
             class="w-100"
           />
         </div>

@@ -1,7 +1,6 @@
 <template>
   <div>
     <SEO :title="getCategory()" description="" />
-    <Navbar dark />
     <section class="bg-light">
       <header class="container pt-5 pb-4">
         <p class="mb-0 small">
@@ -65,7 +64,7 @@ export default {
     return await $graphcms.request(
       gql`
         {
-          posts(where: {category: {slug: "${category}"}}) {
+          posts(orderBy: date_DESC, where: {category: {slug: "${category}"}}) {
             title
             slug
             date
@@ -107,6 +106,10 @@ export default {
     getCategory() {
       return this.posts[0].category.title;
     },
+  },
+
+  beforeMount() {
+    this.$store.commit('global/makeNavDark');
   },
 
   components: { SEO, Header, Navbar },

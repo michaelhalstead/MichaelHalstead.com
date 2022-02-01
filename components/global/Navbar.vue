@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg sticky-top navbar-dark" ref="nav">
+    <nav v-bind:class="[navStyle, 'navbar navbar-expand-lg sticky-top navbar-dark']" ref="nav">
       <div class="container">
         <NuxtLink class="navbar-brand" to="/">
           <img src="~/assets/img/logo.svg" alt="Michael Halstead" />
@@ -75,6 +75,7 @@
 export default {
   data() {
     return {
+      bg: this.navStyle,
       isDark: false,
       progress: 0,
     };
@@ -84,10 +85,18 @@ export default {
       type: Boolean,
     },
   },
+  computed: {
+    navStyle() {
+      return this.$store.state.global.navbar;
+    }
+  },
   methods: {
     handleScroll() {
+      if (this.navStyle === 'bg-dark') {
+        return;
+      }
+
       const ref = this.$refs.nav;
-      console.log(window.scrollY);
       if (window.scrollY > 66 && !ref.classList.contains("bg-dark"))
         ref.classList.add("bg-dark");
       else if (window.scrollY < 67 && ref.classList.contains("bg-dark"))
@@ -98,18 +107,15 @@ export default {
     }
   },
   mounted() {
-    if (this.dark === true) {
-      this.$refs.nav.classList.add("bg-dark");
-    } else {
-      window.addEventListener("scroll", this.handleScroll);
-    }
+    window.addEventListener("scroll", this.handleScroll);
   },
   beforeDestroy() {
     this.$refs.closeModal.click();
   },
   destroyed() {
-    if (!this.dark === true)
+    if (!this.navStyle === 'dark') {
       window.removeEventListener("scroll", this.handleScroll);
+    }
   },
 };
 </script>

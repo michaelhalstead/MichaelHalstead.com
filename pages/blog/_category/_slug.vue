@@ -1,7 +1,6 @@
 <template>
   <div v-if="post">
     <SEO :title="post.title" :image="post.featuredImage.url" />
-    <Navbar />
     <Header
       :background="post.featuredImage.url"
       :title="post.title"
@@ -71,5 +70,8 @@ export default {
       return this.post.content.html.replace(/\[tab\]/gi, '<span class="tab"></span>')
     }
   },
+  beforeMount() {
+    this.$store.commit('global/makeNavLight');
+  }
 };
 </script>

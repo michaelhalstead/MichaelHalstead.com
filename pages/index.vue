@@ -1,7 +1,6 @@
 <template>
   <div>
     <SEO title="Home" description="The website for Michael Halstead. Web Developer and sometimes blogger living in the great state of Washington." />
-    <Navbar />
     <Header />
     <About />
     <CurrentlyReading />
@@ -48,5 +47,8 @@ export default {
     About,
     CurrentlyReading
   },
+  beforeMount() {
+    this.$store.commit('global/makeNavLight');
+  }
 };
 </script>

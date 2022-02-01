@@ -33,6 +33,7 @@ export default {
     charIndex: 0,
     cursorSpan: "",
     scrollY: 0,
+    timeout: null
   }),
   methods: {
     type: function () {
@@ -46,10 +47,10 @@ export default {
           this.charIndex
         );
         this.charIndex++;
-        setTimeout(this.type, this.typingDelay);
+        this.timeout = setTimeout(this.type, this.typingDelay);
       } else {
         cursorSpan.classList.remove("typing");
-        setTimeout(this.erase, this.newTextDelay);
+        this.timeout = setTimeout(this.erase, this.newTextDelay);
       }
     },
     erase: function () {
@@ -63,13 +64,13 @@ export default {
           this.textArrayIndex
         ].substring(0, this.charIndex - 1);
         this.charIndex--;
-        setTimeout(this.erase, this.erasingDelay);
+        this.timeout = setTimeout(this.erase, this.erasingDelay);
       } else {
         cursorSpan.classList.remove("typing");
         this.textArrayIndex++;
         if (this.textArrayIndex >= this.textArray.length)
           this.textArrayIndex = 0;
-        setTimeout(this.type, this.typingDelay + 1100);
+        this.timeout = setTimeout(this.type, this.typingDelay + 1100);
       }
     },
     setOffset: function () {
@@ -86,6 +87,7 @@ export default {
     window.addEventListener("scroll", this.setOffset);
   },
   destroyed: function() {
+    clearTimeout(this.timeout);
     window.removeEventListener("scroll", this.setOffset);
   }
 };
