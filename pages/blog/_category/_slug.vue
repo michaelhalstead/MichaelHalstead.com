@@ -9,14 +9,18 @@
     <section class="py-5 bg-light">
       <div class="container">
         <div class="row">
-          <article class="col-12 col-md-8 offset-md-2">
+          <article class="col-12 col-md-10 col-lg-8 offset-lg-2 offset-md-1">
             <header>
               <h1 class="display-4 font-weight-normal" v-text="post.title" />
             </header>
             <small v-text="formatDate(post.date)" />
             <div class="mt-5" v-html="content()" />
+            <div class="comments mt-5">
+              <Disqus />
+            </div>
           </article>
         </div>
+
       </div>
     </section>
   </div>
