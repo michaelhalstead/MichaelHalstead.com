@@ -28,6 +28,14 @@ export default {
   buildModules: [
     '@nuxtjs/google-fonts'
   ],
+  modules: [
+    '@nuxtjs/gtm'
+  ],
+  gtm: {
+    id: 'GTM-PC54TMM',
+    pageTracking: true,
+    enabled: true
+  },
   googleFonts: {
     families: {
       Roboto: [100, 300, 400, 500, 700, 900]
